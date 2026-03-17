@@ -1,0 +1,110 @@
+<div class="home">
+
+  <!-- Header -->
+  <header class="header" [class.header--scrolled]="scrolled()">
+    <div class="header__inner">
+      <span class="header__brand">Travel&#64;Toulouse</span>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero__glow"></div>
+    <div class="hero__dots"></div>
+
+    <div class="hero__content">
+      <p class="hero__eyebrow">
+        <span class="hero__eyebrow-dot"></span>
+        Location courte durée · Toulouse
+      </p>
+
+      <h1 class="hero__title">
+        Vivez Toulouse<br>
+        <em class="hero__title-accent">comme chez vous</em>
+      </h1>
+
+      <p class="hero__description">
+        Des logements soigneusement sélectionnés au cœur de la Ville Rose,<br class="hero__br">
+        pour un séjour authentique et inoubliable.
+      </p>
+
+      <div class="hero__stats">
+        <div class="hero__stat">
+          <span class="hero__stat-value">{{ properties().length || 6 }}</span>
+          <span class="hero__stat-label">Logements</span>
+        </div>
+        <div class="hero__stat-sep"></div>
+        <div class="hero__stat">
+          <span class="hero__stat-value">6</span>
+          <span class="hero__stat-label">Quartiers</span>
+        </div>
+        <div class="hero__stat-sep"></div>
+        <div class="hero__stat">
+          <span class="hero__stat-value">75€</span>
+          <span class="hero__stat-label">À partir de</span>
+        </div>
+      </div>
+
+      <a class="hero__cta" href="#listings">
+        Voir les logements
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 5v14M5 12l7 7 7-7"/>
+        </svg>
+      </a>
+    </div>
+
+    <!-- Image mosaic -->
+    @if (!loading() && properties().length >= 3) {
+      <div class="hero__mosaic">
+        @for (property of properties().slice(0, 4); track property.id; let i = $index) {
+          <div class="hero__mosaic-item hero__mosaic-item--{{ i }}">
+            @if (property.images[0]) {
+              <img [src]="property.images[0].url" [alt]="property.title" loading="lazy" />
+            }
+          </div>
+        }
+      </div>
+    }
+  </section>
+
+  <!-- Listings -->
+  <section class="listings" id="listings">
+    <div class="listings__header">
+      <div>
+        <h2 class="listings__title">Nos logements</h2>
+        <p class="listings__subtitle">
+          @if (loading()) {
+            Chargement…
+          } @else {
+            {{ properties().length }} logement{{ properties().length > 1 ? 's' : '' }} disponible{{ properties().length > 1 ? 's' : '' }}
+          }
+        </p>
+      </div>
+    </div>
+
+    @if (loading()) {
+      <div class="grid">
+        @for (item of [1, 2, 3, 4, 5, 6]; track item) {
+          <div class="skeleton-card">
+            <div class="skeleton-card__image"></div>
+            <div class="skeleton-card__body">
+              <div class="skeleton-line skeleton-line--title"></div>
+              <div class="skeleton-line skeleton-line--short"></div>
+            </div>
+          </div>
+        }
+      </div>
+    } @else {
+      <div class="grid">
+        @for (property of properties(); track property.id) {
+          <app-property-card [property]="property" />
+        }
+      </div>
+    }
+  </section>
+
+  <footer class="footer">
+    <p>© 2025 Travel&#64;Toulouse — Projet portfolio</p>
+  </footer>
+
+</div>
