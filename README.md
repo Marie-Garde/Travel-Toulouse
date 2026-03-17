@@ -4,12 +4,12 @@ Plateforme de location de logements courte durée à Toulouse — projet portfol
 
 ## Stack
 
-| Couche | Technologie |
-|--------|-------------|
-| Frontend | Angular 21 (standalone components, signals, SCSS) |
-| Backend | Node.js + Express 5 + TypeScript |
-| ORM | Prisma |
-| Base de données | PostgreSQL |
+| Couche          | Technologie                                       |
+| --------------- | ------------------------------------------------- |
+| Frontend        | Angular 21 (standalone components, signals, SCSS) |
+| Backend         | Node.js + Express 5 + TypeScript                  |
+| ORM             | Prisma                                            |
+| Base de données | PostgreSQL                                        |
 
 ## Structure du projet
 
@@ -65,10 +65,10 @@ L'application démarre sur `http://localhost:4200`.
 
 ## API
 
-| Méthode | Route | Description |
-|---------|-------|-------------|
-| GET | `/health` | Sanity check |
-| GET | `/properties` | Liste des logements |
+| Méthode | Route         | Description         |
+| ------- | ------------- | ------------------- |
+| GET     | `/health`     | Sanity check        |
+| GET     | `/properties` | Liste des logements |
 
 ## Variables d'environnement
 
