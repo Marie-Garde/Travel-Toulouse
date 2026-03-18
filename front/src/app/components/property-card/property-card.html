@@ -1,4 +1,4 @@
-<article class="card">
+<article class="card" [routerLink]="['/logement', property().id]">
   <div class="card__image-wrapper">
     @if (primaryImage) {
       <img

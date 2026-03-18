@@ -10,14 +10,14 @@ async function main() {
   await prisma.amenity.deleteMany();
 
   const amenities = await Promise.all([
-    prisma.amenity.create({ data: { label: 'Wifi', icon: 'wifi' } }),
-    prisma.amenity.create({ data: { label: 'Cuisine équipée', icon: 'utensils' } }),
-    prisma.amenity.create({ data: { label: 'Parking', icon: 'car' } }),
-    prisma.amenity.create({ data: { label: 'Climatisation', icon: 'wind' } }),
-    prisma.amenity.create({ data: { label: 'Lave-linge', icon: 'shirt' } }),
-    prisma.amenity.create({ data: { label: 'Terrasse', icon: 'tree-pine' } }),
-    prisma.amenity.create({ data: { label: 'Piscine', icon: 'waves' } }),
-    prisma.amenity.create({ data: { label: 'Animaux acceptés', icon: 'paw-print' } }),
+    prisma.amenity.create({ data: { label: 'Wifi', icon: '📶' } }),
+    prisma.amenity.create({ data: { label: 'Cuisine équipée', icon: '🍳' } }),
+    prisma.amenity.create({ data: { label: 'Parking', icon: '🚗' } }),
+    prisma.amenity.create({ data: { label: 'Climatisation', icon: '❄️' } }),
+    prisma.amenity.create({ data: { label: 'Lave-linge', icon: '🧺' } }),
+    prisma.amenity.create({ data: { label: 'Terrasse', icon: '🌿' } }),
+    prisma.amenity.create({ data: { label: 'Piscine', icon: '🏊' } }),
+    prisma.amenity.create({ data: { label: 'Animaux acceptés', icon: '🐾' } }),
   ]);
 
   const [wifi, kitchen, parking, ac, washer, terrace, pool, pets] = amenities;

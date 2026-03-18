@@ -1,10 +1,11 @@
 import { Component, input } from '@angular/core';
 import { CurrencyPipe } from '@angular/common';
+import { RouterLink } from '@angular/router';
 import { Property } from '../../models/property.model';
 
 @Component({
   selector: 'app-property-card',
-  imports: [CurrencyPipe],
+  imports: [CurrencyPipe, RouterLink],
   templateUrl: './property-card.html',
   styleUrl: './property-card.scss',
 })
