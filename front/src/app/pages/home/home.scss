@@ -3,9 +3,6 @@
   background: var(--color-background);
 }
 
-
-// ─── Hero ──────────────────────────────────────────────────────────────────────
-
 .hero {
   position: relative;
   min-height: 100svh;
@@ -15,7 +12,6 @@
   overflow: hidden;
   padding: 100px 32px 80px;
 
-  // Amber glow
   &__glow {
     position: absolute;
     width: 700px;
@@ -27,7 +23,6 @@
     animation: pulse 6s ease-in-out infinite;
   }
 
-  // Dot grid
   &__dots {
     position: absolute;
     inset: 0;
@@ -152,7 +147,6 @@
     }
   }
 
-  // Image mosaic – right side
   &__mosaic {
     position: absolute;
     right: 0;
@@ -189,8 +183,6 @@
   }
 }
 
-// ─── Listings ─────────────────────────────────────────────────────────────────
-
 .listings {
   max-width: 1280px;
   margin: 0 auto;
@@ -219,8 +211,6 @@
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 28px;
 }
-
-// ─── Skeleton ─────────────────────────────────────────────────────────────────
 
 .skeleton-card {
   background: var(--color-surface);
@@ -254,8 +244,6 @@
   &--short { width: 40%; }
 }
 
-// ─── Footer ───────────────────────────────────────────────────────────────────
-
 .footer {
   border-top: 1px solid var(--color-border);
   padding: 24px 32px;
@@ -263,8 +251,6 @@
   font-size: 0.8rem;
   color: var(--color-text-muted);
 }
-
-// ─── Animations ───────────────────────────────────────────────────────────────
 
 @keyframes shimmer {
   0% { background-position: 200% 0; }
