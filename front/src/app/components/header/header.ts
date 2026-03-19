@@ -1,5 +1,6 @@
-import { Component, HostListener, signal } from '@angular/core';
+import { Component, HostListener, inject, signal } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-header',
@@ -8,6 +9,7 @@ import { RouterLink } from '@angular/router';
   styleUrl: './header.scss',
 })
 export class HeaderComponent {
+  readonly authService = inject(AuthService);
   scrolled = signal(false);
 
   @HostListener('window:scroll')

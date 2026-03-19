@@ -1,5 +1,17 @@
 <header class="header" [class.header--scrolled]="scrolled()">
   <div class="header__inner">
     <a class="header__brand" routerLink="/">Travel&#64;Toulouse</a>
+
+    <nav class="header__nav">
+      @if (authService.currentUser()) {
+        <span class="header__username">{{ authService.currentUser()!.firstName }}</span>
+        <button class="header__btn header__btn--ghost" (click)="authService.logout()">
+          Déconnexion
+        </button>
+      } @else {
+        <a class="header__btn header__btn--ghost" routerLink="/connexion">Connexion</a>
+        <a class="header__btn header__btn--primary" routerLink="/inscription">S'inscrire</a>
+      }
+    </nav>
   </div>
 </header>
