@@ -13,6 +13,16 @@ export const routes: Routes = [
       ),
   },
   {
+    path: 'inscription',
+    loadComponent: () =>
+      import('./pages/register/register').then((m) => m.RegisterComponent),
+  },
+  {
+    path: 'connexion',
+    loadComponent: () =>
+      import('./pages/login/login').then((m) => m.LoginComponent),
+  },
+  {
     path: '**',
     redirectTo: '',
   },
